@@ -50,6 +50,10 @@ An agent should:
 - Execute through `document.modelContext.executeTool()`.
 - Validate and store the receipt.
 
+## WebMCP Reference
+
+For browser API background and current Chrome guidance, see [WebMCP | AI on Chrome | Chrome for Developers](https://developer.chrome.com/docs/ai/webmcp).
+
 ## Optional Pharos Anchoring
 
 To anchor a receipt hash on Pharos Atlantic:
