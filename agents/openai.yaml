@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pharos WebMCP Trust Router"
+  short_description: "Safe WebMCP tool routing with receipts"
+  default_prompt: "Use $pharos-webmcp-trust-router to inspect a WebMCP-enabled page, classify tool risk, require confirmation, execute approved tools, and produce an auditable receipt."

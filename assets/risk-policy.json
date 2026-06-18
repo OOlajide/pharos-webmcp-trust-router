@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "policyVersion": "1.0.0",
+  "categories": [
+    "read-only",
+    "form-fill",
+    "navigation",
+    "state-change",
+    "payment",
+    "identity",
+    "destructive",
+    "cross-origin",
+    "unknown"
+  ],
+  "severityOrder": [
+    "destructive",
+    "payment",
+    "identity",
+    "cross-origin",
+    "unknown",
+    "state-change",
+    "navigation",
+    "form-fill",
+    "read-only"
+  ],
+  "confirmationRequired": {
+    "read-only": false,
+    "form-fill": false,
+    "navigation": true,
+    "state-change": true,
+    "payment": true,
+    "identity": true,
+    "destructive": true,
+    "cross-origin": true,
+    "unknown": true
+  },
+  "forceConfirmationWhen": [
+    "fingerprint_changed",
+    "schema_changed",
+    "autosubmit_form",
+    "payment_amount_present",
+    "identity_field_present",
+    "destructive_target_present",
+    "tool_origin_differs_from_page_origin",
+    "annotations_missing_or_malformed",
+    "validation_gap_on_risky_tool"
+  ],
+  "keywords": {
+    "form-fill": [
+      "fill",
+      "draft",
+      "compose",
+      "edit field",
+      "populate",
+      "form"
+    ],
+    "navigation": [
+      "navigate",
+      "redirect",
+      "open",
+      "download",
+      "link",
+      "url",
+      "route"
+    ],
+    "state-change": [
+      "create",
+      "update",
+      "submit",
+      "send",
+      "post",
+      "reserve",
+      "stage",
+      "prepare",
+      "request",
+      "ticket",
+      "anchor",
+      "on-chain",
+      "cast"
+    ],
+    "payment": [
+      "pay",
+      "payment",
+      "checkout",
+      "purchase",
+      "charge",
+      "wallet",
+      "transfer",
+      "subscribe",
+      "billing"
+    ],
+    "identity": [
+      "identity",
+      "profile",
+      "account",
+      "login",
+      "logout",
+      "password",
+      "email",
+      "phone",
+      "address",
+      "kyc",
+      "session",
+      "permission"
+    ],
+    "destructive": [
+      "delete",
+      "remove",
+      "cancel",
+      "void",
+      "wipe",
+      "erase",
+      "close account",
+      "revoke",
+      "burn",
+      "refund"
+    ]
+  }
+}

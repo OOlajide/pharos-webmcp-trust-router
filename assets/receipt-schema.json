@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pharos.local/schemas/webmcp-action-receipt.json",
+  "title": "Pharos WebMCP Trust Router Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receiptVersion",
+    "skill",
+    "timestamp",
+    "origin",
+    "toolName",
+    "schemaHash",
+    "inputHash",
+    "outputHash",
+    "riskLevel",
+    "confirmation",
+    "executionStatus",
+    "receiptHash"
+  ],
+  "properties": {
+    "receiptVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "skill": {
+      "type": "string",
+      "const": "pharos-webmcp-trust-router"
+    },
+    "actionId": {
+      "type": "string",
+      "minLength": 8
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "origin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pageUrl": {
+      "type": "string"
+    },
+    "toolName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "toolFingerprint": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "schemaHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "outputHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "read-only",
+        "form-fill",
+        "navigation",
+        "state-change",
+        "payment",
+        "identity",
+        "destructive",
+        "cross-origin",
+        "unknown"
+      ]
+    },
+    "confirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "status"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_required",
+            "requested",
+            "approved",
+            "denied",
+            "missing"
+          ]
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "confirmedBy": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "executionStatus": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "blocked",
+        "failed"
+      ]
+    },
+    "blockedReason": {
+      "type": "string"
+    },
+    "validationErrors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "bridgeMode": {
+      "type": "string",
+      "enum": [
+        "native-webmcp",
+        "mock",
+        "polyfill",
+        "unavailable"
+      ]
+    },
+    "pharosTransactionHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$"
+    },
+    "receiptHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    }
+  }
+}
